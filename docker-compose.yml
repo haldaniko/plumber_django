@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: .
+    container_name: plumber-django-dev
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      DJANGO_DEBUG: "1"
+      DJANGO_ALLOWED_HOSTS: "127.0.0.1,localhost,testserver"
+      DJANGO_SECRET_KEY: "dev-only-change-me"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    restart: unless-stopped

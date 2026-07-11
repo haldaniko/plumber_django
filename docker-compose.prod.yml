@@ -6,10 +6,10 @@ services:
     command: >
       sh -c "python manage.py collectstatic --noinput &&
              gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 3"
+    env_file:
+      - .env
     environment:
       DJANGO_DEBUG: "0"
-      DJANGO_ALLOWED_HOSTS: "${DJANGO_ALLOWED_HOSTS:-*}"
-      DJANGO_SECRET_KEY: "${DJANGO_SECRET_KEY:-change-me-in-production}"
     ports:
       - "8013:8000"
     restart: unless-stopped

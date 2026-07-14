@@ -231,14 +231,27 @@ p {
     line-height: 1.45;
 }
 
-.free-estimates-banner .theme-btn {
+.free-estimates-banner .free-estimates-btn {
     flex: 0 0 auto;
+    min-height: 64px;
+    padding: 0 34px;
     border: 0;
+    border-radius: 0;
     background: #111;
+    color: #fff;
+    font-family: cerebri-bold;
+    font-size: 22px;
+    line-height: 64px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+    transition: background .2s ease, transform .2s ease;
 }
 
-.free-estimates-banner .theme-btn:before {
+.free-estimates-banner .free-estimates-btn:hover {
     background: #000;
+    transform: translateY(-2px);
 }
 
 .project-modal .modal-content {

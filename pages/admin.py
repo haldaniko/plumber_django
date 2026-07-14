@@ -46,8 +46,16 @@ class RequestSubmissionAdmin(admin.ModelAdmin):
     list_display = ("name", "phone", "request_type", "created_at")
     list_filter = ("request_type", "created_at")
     search_fields = ("name", "phone", "message")
-    readonly_fields = ("created_at",)
     fields = ("name", "phone", "request_type", "message", "created_at")
+
+    def get_readonly_fields(self, request, obj=None):
+        return tuple(field.name for field in self.model._meta.fields)
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 
 admin.site.site_header = "Spasibo LLC"

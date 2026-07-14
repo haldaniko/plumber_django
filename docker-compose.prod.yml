@@ -12,4 +12,9 @@ services:
       DJANGO_DEBUG: "0"
     ports:
       - "8013:8000"
+    volumes:
+      - media_data:/app/media
     restart: unless-stopped
+
+volumes:
+  media_data:

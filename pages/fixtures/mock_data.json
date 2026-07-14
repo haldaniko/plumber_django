@@ -1,0 +1,235 @@
+[
+  {
+    "model": "pages.sitesettings",
+    "pk": 1,
+    "fields": {
+      "phone": "+1 845 678 899",
+      "email": "info@example.com",
+      "address": "Dallas, TX"
+    }
+  },
+  {
+    "model": "pages.projecttag",
+    "pk": 1,
+    "fields": {
+      "name": "Residential",
+      "slug": "residential",
+      "is_active": true,
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "pages.projecttag",
+    "pk": 2,
+    "fields": {
+      "name": "Commercial",
+      "slug": "commercial",
+      "is_active": true,
+      "sort_order": 2
+    }
+  },
+  {
+    "model": "pages.projecttag",
+    "pk": 3,
+    "fields": {
+      "name": "Repairs",
+      "slug": "repairs",
+      "is_active": true,
+      "sort_order": 3
+    }
+  },
+  {
+    "model": "pages.projecttag",
+    "pk": 4,
+    "fields": {
+      "name": "Installation",
+      "slug": "installation",
+      "is_active": true,
+      "sort_order": 4
+    }
+  },
+  {
+    "model": "pages.projectcase",
+    "pk": 1,
+    "fields": {
+      "tag": 1,
+      "title": "Interior Painting",
+      "description": "Interior painting project with careful surface preparation, wall repair, clean masking, and a smooth finish selected to match the room design.",
+      "is_active": true,
+      "sort_order": 1,
+      "created_at": "2026-07-14T00:00:00Z",
+      "updated_at": "2026-07-14T00:00:00Z"
+    }
+  },
+  {
+    "model": "pages.projectcase",
+    "pk": 2,
+    "fields": {
+      "tag": 4,
+      "title": "Deck Installation",
+      "description": "Outdoor deck work planned for daily use, with material handling, precise installation, and clean finishing around visible edges.",
+      "is_active": true,
+      "sort_order": 2,
+      "created_at": "2026-07-14T00:00:00Z",
+      "updated_at": "2026-07-14T00:00:00Z"
+    }
+  },
+  {
+    "model": "pages.projectcase",
+    "pk": 3,
+    "fields": {
+      "tag": 3,
+      "title": "Wall Restoration",
+      "description": "Wall restoration after surface damage, including patching, leveling, sanding, priming, and painting for a clean final result.",
+      "is_active": true,
+      "sort_order": 3,
+      "created_at": "2026-07-14T00:00:00Z",
+      "updated_at": "2026-07-14T00:00:00Z"
+    }
+  },
+  {
+    "model": "pages.projectcase",
+    "pk": 4,
+    "fields": {
+      "tag": 2,
+      "title": "Flooring Replacement",
+      "description": "Flooring replacement with old covering removal, material delivery, installation, and finishing details such as trims and baseboards.",
+      "is_active": true,
+      "sort_order": 4,
+      "created_at": "2026-07-14T00:00:00Z",
+      "updated_at": "2026-07-14T00:00:00Z"
+    }
+  },
+  {
+    "model": "pages.projectcase",
+    "pk": 5,
+    "fields": {
+      "tag": 3,
+      "title": "Exterior Coating",
+      "description": "Exterior coating and painting work for durable surfaces such as fences, garages, concrete, asphalt, and outdoor structures.",
+      "is_active": true,
+      "sort_order": 5,
+      "created_at": "2026-07-14T00:00:00Z",
+      "updated_at": "2026-07-14T00:00:00Z"
+    }
+  },
+  {
+    "model": "pages.projectcase",
+    "pk": 6,
+    "fields": {
+      "tag": 1,
+      "title": "Baseboard Installation",
+      "description": "Trim and baseboard installation completed with accurate cuts, clean joints, and finishing work that ties the room together.",
+      "is_active": true,
+      "sort_order": 6,
+      "created_at": "2026-07-14T00:00:00Z",
+      "updated_at": "2026-07-14T00:00:00Z"
+    }
+  },
+  {
+    "model": "pages.projectcase",
+    "pk": 7,
+    "fields": {
+      "tag": 1,
+      "title": "Stair Finishing",
+      "description": "Stair finishing and repair work focused on solid installation, neat transitions, and a polished surface ready for everyday traffic.",
+      "is_active": true,
+      "sort_order": 7,
+      "created_at": "2026-07-14T00:00:00Z",
+      "updated_at": "2026-07-14T00:00:00Z"
+    }
+  },
+  {
+    "model": "pages.projectcase",
+    "pk": 8,
+    "fields": {
+      "tag": 2,
+      "title": "Custom Repair Work",
+      "description": "Custom repair and improvement work for creative or unusual tasks that require flexible planning and hands-on problem solving.",
+      "is_active": true,
+      "sort_order": 8,
+      "created_at": "2026-07-14T00:00:00Z",
+      "updated_at": "2026-07-14T00:00:00Z"
+    }
+  },
+  {
+    "model": "pages.projectcaseimage",
+    "pk": 1,
+    "fields": {
+      "project": 1,
+      "image": "../static/plumber/assets/images/gallery/image-1.jpg",
+      "alt_text": "Interior Painting",
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "pages.projectcaseimage",
+    "pk": 2,
+    "fields": {
+      "project": 2,
+      "image": "../static/plumber/assets/images/gallery/image-2.jpg",
+      "alt_text": "Deck Installation",
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "pages.projectcaseimage",
+    "pk": 3,
+    "fields": {
+      "project": 3,
+      "image": "../static/plumber/assets/images/gallery/image-3.jpg",
+      "alt_text": "Wall Restoration",
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "pages.projectcaseimage",
+    "pk": 4,
+    "fields": {
+      "project": 4,
+      "image": "../static/plumber/assets/images/gallery/image-4.jpg",
+      "alt_text": "Flooring Replacement",
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "pages.projectcaseimage",
+    "pk": 5,
+    "fields": {
+      "project": 5,
+      "image": "../static/plumber/assets/images/gallery/image-5.jpg",
+      "alt_text": "Exterior Coating",
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "pages.projectcaseimage",
+    "pk": 6,
+    "fields": {
+      "project": 6,
+      "image": "../static/plumber/assets/images/gallery/image-6.jpg",
+      "alt_text": "Baseboard Installation",
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "pages.projectcaseimage",
+    "pk": 7,
+    "fields": {
+      "project": 7,
+      "image": "../static/plumber/assets/images/gallery/image-7.jpg",
+      "alt_text": "Stair Finishing",
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "pages.projectcaseimage",
+    "pk": 8,
+    "fields": {
+      "project": 8,
+      "image": "../static/plumber/assets/images/gallery/image-8.jpg",
+      "alt_text": "Custom Repair Work",
+      "sort_order": 1
+    }
+  }
+]

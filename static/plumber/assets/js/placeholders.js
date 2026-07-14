@@ -230,14 +230,14 @@
             var requestType = trigger ? trigger.getAttribute("data-request-type") : "";
             var requestLabel = requestLabels[requestType] || "Request a Quote";
             var title = document.getElementById("requestModalLabel");
-            var select = this.querySelector("select[name='subject']");
+            var typeInput = this.querySelector("input[name='request_type']");
 
             if (title) {
                 title.textContent = requestLabel;
             }
 
-            if (select && requestType) {
-                select.value = requestType;
+            if (typeInput) {
+                typeInput.value = requestType || "general";
             }
         });
     }

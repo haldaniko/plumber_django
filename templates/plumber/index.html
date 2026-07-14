@@ -327,25 +327,14 @@
                 <h5 class="modal-title" id="requestModalLabel">Request a Quote</h5>
             </div>
             <div class="modal-body">
-                <form action="#">
+                <form action="{% url 'submit_request' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="request_type" value="general">
                     <div class="form-group">
-                        <input name="name" placeholder="Name" type="text" class="form-control">
+                        <input name="name" placeholder="Name" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <input name="phone" placeholder="Phone" type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" name="subject">
-                            <option value="*">Project type</option>
-                            <option value="standard">Standard Request</option>
-                            <option value="urgent">Urgent Request</option>
-                            <option value="commercial">Commercial B2B Clients</option>
-                            <option value="complex">High Complexity Request</option>
-                            <option value="painting">Painting Projects</option>
-                            <option value="flooring">Flooring and Deck</option>
-                            <option value="walls">Wall Repair and Restoration</option>
-                            <option value="custom">Custom Project</option>
-                        </select>
+                        <input name="phone" placeholder="Phone" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <textarea name="message" placeholder="Tell us a little about the project" class="form-control" rows="4"></textarea>

@@ -59,3 +59,31 @@ class ProjectCaseImage(models.Model):
 
     def __str__(self):
         return self.alt_text or f"Image for {self.project}"
+
+
+class RequestSubmission(models.Model):
+    STANDARD = "standard"
+    URGENT = "urgent"
+    COMMERCIAL = "commercial"
+    COMPLEX = "complex"
+    GENERAL = "general"
+
+    REQUEST_TYPE_CHOICES = [
+        (STANDARD, "Standard Request"),
+        (URGENT, "Urgent Request"),
+        (COMMERCIAL, "Commercial B2B Clients"),
+        (COMPLEX, "High Complexity Request"),
+        (GENERAL, "General Request"),
+    ]
+
+    name = models.CharField(max_length=120)
+    phone = models.CharField(max_length=60)
+    message = models.TextField(blank=True)
+    request_type = models.CharField(max_length=20, choices=REQUEST_TYPE_CHOICES, default=GENERAL)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ("-created_at",)
+
+    def __str__(self):
+        return f"{self.get_request_type_display()} - {self.name}"

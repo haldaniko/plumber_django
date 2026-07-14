@@ -1,7 +1,10 @@
-from django.shortcuts import render
 import json
 
-from .models import ProjectCase, ProjectTag, SiteSettings
+from django.contrib import messages
+from django.shortcuts import redirect, render
+from django.views.decorators.http import require_POST
+
+from .models import ProjectCase, ProjectTag, RequestSubmission, SiteSettings
 
 
 def home(request):
@@ -30,3 +33,28 @@ def home(request):
             "projects": projects,
         },
     )
+
+
+@require_POST
+def submit_request(request):
+    request_type = request.POST.get("request_type") or RequestSubmission.GENERAL
+    valid_types = {choice[0] for choice in RequestSubmission.REQUEST_TYPE_CHOICES}
+    if request_type not in valid_types:
+        request_type = RequestSubmission.GENERAL
+
+    name = request.POST.get("name", "").strip()
+    phone = request.POST.get("phone", "").strip()
+    message = request.POST.get("message", "").strip()
+
+    if name and phone:
+        RequestSubmission.objects.create(
+            name=name,
+            phone=phone,
+            message=message,
+            request_type=request_type,
+        )
+        messages.success(request, "Your request has been submitted.")
+    else:
+        messages.error(request, "Please enter your name and phone number.")
+
+    return redirect("/#contact")

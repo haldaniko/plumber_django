@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
-from .models import ProjectCase, ProjectCaseImage, ProjectTag, SiteSettings
+from .models import ProjectCase, ProjectCaseImage, ProjectTag, RequestSubmission, SiteSettings
 
 
 class ProjectCaseImageInline(admin.TabularInline):
@@ -39,6 +39,15 @@ class ProjectCaseAdmin(admin.ModelAdmin):
     list_editable = ("is_active", "sort_order")
     search_fields = ("title", "description")
     inlines = (ProjectCaseImageInline,)
+
+
+@admin.register(RequestSubmission)
+class RequestSubmissionAdmin(admin.ModelAdmin):
+    list_display = ("name", "phone", "request_type", "created_at")
+    list_filter = ("request_type", "created_at")
+    search_fields = ("name", "phone", "message")
+    readonly_fields = ("created_at",)
+    fields = ("name", "phone", "request_type", "message", "created_at")
 
 
 admin.site.site_header = "Spasibo LLC"

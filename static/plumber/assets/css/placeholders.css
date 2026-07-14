@@ -197,6 +197,21 @@ p {
     cursor: pointer;
 }
 
+.portfolio-section .gallery-block .image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.portfolio-section .gallery-block .image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .portfolio-section .gallery-block .inner-box:focus {
     outline: 3px solid rgba(0, 0, 230, .35);
     outline-offset: 4px;

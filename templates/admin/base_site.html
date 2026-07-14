@@ -1,0 +1,35 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<div id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></div>
+{% endblock %}
+
+{% block usertools %}
+{% if has_permission %}
+<div id="user-tools" class="sp-admin-userbar">
+    <span class="sp-admin-welcome">{% translate 'Welcome,' %} <strong>{% firstof user.get_short_name user.get_username %}</strong></span>
+    {% if site_url %}
+    <a class="sp-admin-link" href="{{ site_url }}">{% translate 'View site' %}</a>
+    {% endif %}
+    {% if user.has_usable_password %}
+    <a class="sp-admin-link" href="{% url 'admin:password_change' %}">{% translate 'Change password' %}</a>
+    {% endif %}
+    <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
+        {% csrf_token %}
+        <button class="sp-admin-link sp-admin-logout" type="submit">{% translate 'Log out' %}</button>
+    </form>
+    {% include "admin/color_theme_toggle.html" %}
+</div>
+{% endif %}
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'plumber/assets/css/admin.css' %}">
+{% endblock %}

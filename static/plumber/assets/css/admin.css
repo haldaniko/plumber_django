@@ -1,0 +1,230 @@
+:root {
+    --primary: #4968c9;
+    --secondary: #111827;
+    --accent: #157347;
+    --primary-fg: #fff;
+    --body-fg: #222;
+    --body-bg: #f4f6fb;
+    --link-fg: #3658ba;
+    --link-hover-color: #111827;
+    --hairline-color: #dde2ea;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6fb;
+}
+
+#header {
+    background: #fff;
+    color: #111827;
+    border-bottom: 1px solid #e5e9f2;
+    box-shadow: 0 12px 30px rgba(17, 24, 39, .06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 72px;
+    padding: 14px 34px;
+}
+
+#branding {
+    min-width: max-content;
+}
+
+#site-name,
+#site-name a:link,
+#site-name a:visited,
+#branding h1,
+#branding h1 a:link,
+#branding h1 a:visited {
+    color: #000042;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+#user-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-left: auto;
+    color: #4b5563;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: right;
+    text-transform: none;
+}
+
+#user-tools a,
+#user-tools .sp-admin-link {
+    color: #3658ba !important;
+    border-bottom-color: rgba(54, 88, 186, .3);
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+}
+
+#user-tools strong {
+    color: #111827;
+}
+
+#user-tools form {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+}
+
+#user-tools button,
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 30px;
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid #d9e0ee;
+    border-radius: 999px;
+    background: #f7f9fd;
+    color: #3658ba;
+    font-size: 12px;
+    line-height: 1.2;
+    cursor: pointer;
+    text-transform: none;
+}
+
+.sp-admin-userbar {
+    letter-spacing: 0;
+}
+
+.sp-admin-welcome {
+    color: #4b5563;
+    white-space: nowrap;
+}
+
+.sp-admin-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 14px;
+    border: 1px solid #d9e0ee;
+    border-radius: 999px;
+    background: #f7f9fd;
+    color: #3658ba !important;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.sp-admin-link:hover {
+    background: #eef3ff;
+    border-color: #c9d4f2;
+    color: #243f8f !important;
+}
+
+#user-tools .sp-admin-logout {
+    font: inherit;
+    font-size: 13px;
+    background: #f7f9fd;
+}
+
+.theme-toggle svg {
+    width: 16px;
+    height: 16px;
+}
+
+#user-tools .visually-hidden,
+.theme-toggle .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+    background: #4968c9;
+    color: #fff;
+}
+
+div.breadcrumbs {
+    background: #111827;
+}
+
+.button,
+input[type=submit],
+input[type=button],
+.submit-row input,
+a.button {
+    background: #4968c9;
+    border-radius: 0;
+    font-weight: 700;
+}
+
+.button:hover,
+input[type=submit]:hover,
+input[type=button]:hover,
+.submit-row input:hover,
+a.button:hover {
+    background: #3658ba;
+}
+
+.button.default,
+input[type=submit].default,
+.submit-row input.default {
+    background: #157347;
+}
+
+.button.default:hover,
+input[type=submit].default:hover,
+.submit-row input.default:hover {
+    background: #0f5f3a;
+}
+
+#content {
+    padding-top: 28px;
+}
+
+.dashboard .module,
+#content-main .module,
+.inline-group,
+.submit-row {
+    border-radius: 0;
+    box-shadow: 0 14px 35px rgba(17, 24, 39, .08);
+    border: 1px solid #e5e9f2;
+}
+
+input,
+textarea,
+select,
+.vTextField {
+    border-radius: 0;
+}
+
+.sp-admin-thumb {
+    width: 92px;
+    height: 62px;
+    object-fit: cover;
+    border: 1px solid #dde2ea;
+    background: #d9d9d9;
+}
+
+@media (max-width: 900px) {
+    #header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 22px;
+    }
+
+    #user-tools {
+        justify-content: flex-start;
+        text-align: left;
+    }
+}

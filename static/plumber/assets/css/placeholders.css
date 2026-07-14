@@ -202,6 +202,45 @@ p {
     outline-offset: 4px;
 }
 
+.free-estimates-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 52px auto 0;
+    padding: 30px 36px;
+    background: #ccff00;
+    color: #111;
+    box-shadow: 0 18px 45px rgba(102, 128, 0, .22);
+}
+
+.free-estimates-banner span {
+    display: block;
+    color: #111;
+    font-family: cerebri-bold;
+    font-size: 44px;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.free-estimates-banner p {
+    max-width: 760px;
+    margin: 10px 0 0;
+    color: #1d1d1d;
+    font-size: 20px;
+    line-height: 1.45;
+}
+
+.free-estimates-banner .theme-btn {
+    flex: 0 0 auto;
+    border: 0;
+    background: #111;
+}
+
+.free-estimates-banner .theme-btn:before {
+    background: #000;
+}
+
 .project-modal .modal-content {
     border: 0;
     border-radius: 0;
@@ -534,6 +573,11 @@ p {
         flex-direction: column;
         align-items: flex-start;
     }
+
+    .free-estimates-banner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }
 
 @media only screen and (max-width: 575px) {
@@ -548,6 +592,14 @@ p {
     .request-option-btn {
         width: 100%;
         min-width: 0;
+    }
+
+    .free-estimates-banner {
+        padding: 26px 22px;
+    }
+
+    .free-estimates-banner span {
+        font-size: 34px;
     }
 }
 

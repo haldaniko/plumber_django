@@ -227,24 +227,6 @@
 		});
 	}
 	
-	//Search Popup
-	if($('#search-popup').length){
-		
-		//Show Popup
-		$('.search-toggler').on('click', function() {
-			$('#search-popup').addClass('popup-visible');
-		});
-		$(document).keydown(function(e){
-	        if(e.keyCode === 27) {
-	            $('#search-popup').removeClass('popup-visible');
-	        }
-	    });
-		//Hide Popup
-		$('.close-search,.search-popup .overlay-layer').on('click', function() {
-			$('#search-popup').removeClass('popup-visible');
-		});
-	}
-
 	function bannerSlider() {
 	    if ($(".banner-slider").length > 0) {
 

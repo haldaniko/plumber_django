@@ -33,42 +33,11 @@
     }
 
     function processImages(root) {
-        var scope = root || document;
-        var images = [];
-        if (scope.matches && scope.matches("img")) {
-            images.push(scope);
-        }
-        Array.prototype.push.apply(images, scope.querySelectorAll ? scope.querySelectorAll("img") : []);
-
-        images.forEach(function (img) {
-            if (img.complete) {
-                markImage(img);
-            } else {
-                img.addEventListener("load", function () {
-                    markImage(img);
-                }, { once: true });
-            }
-        });
+        return;
     }
 
     function processBackgrounds(root) {
-        var scope = root || document;
-        var elements = [];
-        if (scope.matches && scope.matches("[style*='/static/plumber/assets/images/']")) {
-            elements.push(scope);
-        }
-        Array.prototype.push.apply(elements, scope.querySelectorAll ? scope.querySelectorAll("[style*='/static/plumber/assets/images/']") : []);
-
-        elements.forEach(function (element) {
-            var style = element.getAttribute("style") || "";
-            if (!photoPathPattern.test(style)) {
-                return;
-            }
-
-            var rect = element.getBoundingClientRect();
-            element.classList.add("photo-background-placeholder");
-            element.dataset.placeholderSize = imageSizeLabel(rect.width, rect.height);
-        });
+        return;
     }
 
     function removeGeneratedOwlStageClass() {

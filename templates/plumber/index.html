@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -147,7 +148,8 @@
         <div class="swiper-container static-banner">
             <div class="swiper-wrapper">
                 <!-- Slide Item -->
-                <div class="swiper-slide" style="background-image: url('/static/plumber/assets/images/main-slider/image-1.jpg');">
+                <div class="swiper-slide">
+                    <img class="hero-background-image" src="{% static 'plumber/assets/images/main-slider/hero.jpg' %}" alt="Exterior home improvement project">
                     <div class="content-outer">
                         <div class="content-box">
                             <div class="inner">
@@ -191,7 +193,7 @@
                     <div class="service-block-two col-lg-4 col-md-6">
                         <div class="inner-box">
                             <div class="image">
-                                <img src="/static/plumber/assets/images/resource/image-1.jpg" alt="">
+                                <img src="{% static 'plumber/assets/images/resource/painting.jpg' %}" alt="Painting project">
                             </div>
                             <div class="lower-content">
                                 <h4><span>Painting Projects</span></h4>
@@ -202,7 +204,7 @@
                     <div class="service-block-two col-lg-4 col-md-6">
                         <div class="inner-box">
                             <div class="image">
-                                <img src="/static/plumber/assets/images/resource/image-2.jpg" alt="">
+                                <img src="{% static 'plumber/assets/images/resource/flooring.jpg' %}" alt="Flooring and deck project">
                             </div>
                             <div class="lower-content">
                                 <h4><span>Flooring and Deck</span></h4>
@@ -213,7 +215,7 @@
                     <div class="service-block-two col-lg-4 col-md-6">
                         <div class="inner-box">
                             <div class="image">
-                                <img src="/static/plumber/assets/images/resource/image-3.jpg" alt="">
+                                <img src="{% static 'plumber/assets/images/resource/custom.jpg' %}" alt="Custom project">
                             </div>
                             <div class="lower-content">
                                 <h4><span>Custom Projects</span></h4>

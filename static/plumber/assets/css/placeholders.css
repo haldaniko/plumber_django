@@ -50,7 +50,7 @@ p {
 }
 
 .main-header .header-brand-text {
-    color: #000042;
+    color: #123A39;
     font-family: cerebri-bold;
     font-size: 24px;
     line-height: 1;
@@ -95,7 +95,7 @@ p {
 }
 
 .banner-section .hero-intro .sub-title {
-    color: #0000e6;
+    color: #2F6F6E;
     font-family: cerebri-medium;
     font-size: 20px;
     line-height: 1.55;
@@ -213,7 +213,7 @@ p {
 }
 
 .portfolio-section .gallery-block .inner-box:focus {
-    outline: 3px solid rgba(0, 0, 230, .35);
+    outline: 3px solid rgba(47, 111, 110, .35);
     outline-offset: 4px;
 }
 
@@ -307,7 +307,7 @@ p {
     height: 52px;
     border: 0;
     border-radius: 50%;
-    background: rgba(0, 0, 230, .92);
+    background: rgba(47, 111, 110, .92);
     color: #fff;
     font-size: 24px;
     line-height: 52px;
@@ -318,7 +318,7 @@ p {
 }
 
 .project-modal .project-album-arrow:hover {
-    background: #0000e6;
+    background: #265A59;
     transform: translateY(-50%) scale(1.05);
 }
 

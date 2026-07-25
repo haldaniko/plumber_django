@@ -1,11 +1,11 @@
 :root {
-    --primary: #4968c9;
+    --primary: #2F6F6E;
     --secondary: #111827;
     --accent: #157347;
     --primary-fg: #fff;
     --body-fg: #222;
     --body-bg: #f4f6fb;
-    --link-fg: #3658ba;
+    --link-fg: #2F6F6E;
     --link-hover-color: #111827;
     --hairline-color: #dde2ea;
 }
@@ -38,7 +38,7 @@ body {
 #branding h1,
 #branding h1 a:link,
 #branding h1 a:visited {
-    color: #000042;
+    color: #123A39;
     font-size: 24px;
     font-weight: 800;
     line-height: 1.2;
@@ -60,8 +60,8 @@ body {
 
 #user-tools a,
 #user-tools .sp-admin-link {
-    color: #3658ba !important;
-    border-bottom-color: rgba(54, 88, 186, .3);
+    color: #2F6F6E !important;
+    border-bottom-color: rgba(47, 111, 110, .3);
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
@@ -88,7 +88,7 @@ body {
     border: 1px solid #d9e0ee;
     border-radius: 999px;
     background: #f7f9fd;
-    color: #3658ba;
+    color: #2F6F6E;
     font-size: 12px;
     line-height: 1.2;
     cursor: pointer;
@@ -112,15 +112,15 @@ body {
     border: 1px solid #d9e0ee;
     border-radius: 999px;
     background: #f7f9fd;
-    color: #3658ba !important;
+    color: #2F6F6E !important;
     font-size: 13px;
     line-height: 1.2;
 }
 
 .sp-admin-link:hover {
-    background: #eef3ff;
-    border-color: #c9d4f2;
-    color: #243f8f !important;
+    background: #eaf5f4;
+    border-color: #b9d8d6;
+    color: #265A59 !important;
 }
 
 #user-tools .sp-admin-logout {
@@ -150,7 +150,7 @@ body {
 .module h2,
 .module caption,
 .inline-group h2 {
-    background: #4968c9;
+    background: #2F6F6E;
     color: #fff;
 }
 
@@ -163,7 +163,7 @@ input[type=submit],
 input[type=button],
 .submit-row input,
 a.button {
-    background: #4968c9;
+    background: #2F6F6E;
     border-radius: 0;
     font-weight: 700;
 }
@@ -173,7 +173,7 @@ input[type=submit]:hover,
 input[type=button]:hover,
 .submit-row input:hover,
 a.button:hover {
-    background: #3658ba;
+    background: #265A59;
 }
 
 .button.default,

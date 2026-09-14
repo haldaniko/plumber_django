@@ -91,7 +91,7 @@ p {
     max-width: 600px;
     padding: 28px 32px 32px;
     background: rgba(255, 255, 255, .92);
-    border-left: 8px solid #2F6F6E;
+    border-left: 8px solid var(--primary-color, #5A3E2B);
     box-shadow: 0 22px 55px rgba(0, 0, 0, .22);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -108,7 +108,7 @@ p {
 }
 
 .banner-section .hero-intro .sub-title {
-    color: #2F6F6E;
+    color: var(--primary-color, #5A3E2B);
     font-family: cerebri-medium;
     font-size: 15px;
     line-height: 1.55;
@@ -821,4 +821,42 @@ p {
     .banner-section .hero-intro h2 {
         font-size: 32px;
     }
+}
+
+.legal-header {
+    position: relative;
+}
+
+.legal-page-section {
+    position: relative;
+    padding: 80px 0 100px;
+    background: #fff;
+}
+
+.legal-page-section h1 {
+    position: relative;
+    margin-bottom: 28px;
+    font-size: 46px;
+    line-height: 1.15em;
+}
+
+.legal-back-link {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 24px;
+    font-family: cerebri-semi-bold;
+}
+
+.legal-page-content {
+    position: relative;
+    max-width: 920px;
+    color: #555;
+    font-size: 17px;
+    line-height: 1.8em;
+}
+
+.legal-page-content h2,
+.legal-page-content h3,
+.legal-page-content strong {
+    color: #222;
 }

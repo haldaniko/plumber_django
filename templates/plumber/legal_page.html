@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ page.title }} - {{ site_settings.site_name }}</title>
+<link href="/static/plumber/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/static/plumber/assets/css/style.css" rel="stylesheet">
+<link href="/static/plumber/assets/css/responsive.css" rel="stylesheet">
+<link href="/static/plumber/assets/css/color.css" rel="stylesheet">
+<link rel="shortcut icon" href="{{ site_settings.favicon_url }}" type="image/x-icon">
+<link rel="icon" href="{{ site_settings.favicon_url }}" type="image/x-icon">
+<style>
+    :root {
+        --primary-color: {{ site_settings.primary_color }};
+        --primary-color-soft: color-mix(in srgb, var(--primary-color) 10%, #ffffff);
+        --primary-color-muted: color-mix(in srgb, var(--primary-color) 24%, #ffffff);
+        --primary-color-dark: color-mix(in srgb, var(--primary-color) 78%, #000000);
+    }
+</style>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+
+<body>
+<div class="page-wrapper">
+    <header class="main-header header-style-one legal-header">
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <div class="logo-box">
+                        <div class="logo"><a href="{% url 'home' %}"><img src="{{ site_settings.logo_url }}" alt="{{ site_settings.site_name }}"></a></div>
+                        <div class="header-brand-text">{{ site_settings.site_name }}</div>
+                    </div>
+                    <div class="right-column">
+                        <div class="contact-info">
+                            <div class="single-info">
+                                <div class="icon"><span class="flaticon-comment"></span></div>
+                                <div class="content">
+                                    <h5>{{ site_texts.header_phone_label.text }}</h5>
+                                    <div class="text"><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="legal-page-section">
+        <div class="auto-container">
+            <a class="legal-back-link" href="{% url 'home' %}">{{ site_texts.legal_back_home.text }}</a>
+            <h1>{{ page.title }}</h1>
+            <div class="legal-page-content">
+                {{ page.content|linebreaks }}
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

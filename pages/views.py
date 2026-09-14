@@ -1,14 +1,16 @@
 import json
 
 from django.contrib import messages
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_POST
 
-from .models import ProjectCase, ProjectTag, RequestSubmission, SiteSettings
+from .models import LegalPage, ProjectCase, ProjectTag, RequestSubmission, SiteImage, SiteSettings, SiteText
 
 
 def home(request):
     site_settings = SiteSettings.load()
+    site_texts = {item.key: item for item in SiteText.objects.all()}
+    site_images = {item.key: item for item in SiteImage.objects.all()}
     tags = list(ProjectTag.objects.filter(is_active=True))
     projects = list(
         ProjectCase.objects.select_related("tag")
@@ -29,8 +31,25 @@ def home(request):
         "plumber/index.html",
         {
             "site_settings": site_settings,
+            "site_texts": site_texts,
+            "site_images": site_images,
             "project_tags": tags,
             "projects": projects,
+        },
+    )
+
+
+def legal_page(request, slug):
+    site_settings = SiteSettings.load()
+    site_texts = {item.key: item for item in SiteText.objects.all()}
+    page = get_object_or_404(LegalPage, slug=slug)
+    return render(
+        request,
+        "plumber/legal_page.html",
+        {
+            "site_settings": site_settings,
+            "site_texts": site_texts,
+            "page": page,
         },
     )
 

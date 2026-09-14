@@ -1,7 +1,16 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
-from .models import ProjectCase, ProjectCaseImage, ProjectTag, RequestSubmission, SiteSettings
+from .models import (
+    LegalPage,
+    ProjectCase,
+    ProjectCaseImage,
+    ProjectTag,
+    RequestSubmission,
+    SiteImage,
+    SiteSettings,
+    SiteText,
+)
 
 
 class ProjectCaseImageInline(admin.TabularInline):
@@ -18,10 +27,53 @@ class ProjectCaseImageInline(admin.TabularInline):
 
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(admin.ModelAdmin):
-    fields = ("phone", "email", "address")
+    fieldsets = (
+        ("Brand", {"fields": ("site_name", "primary_color", "logo_preview", "logo", "favicon_preview", "favicon")}),
+        ("Contacts", {"fields": ("phone", "email", "address")}),
+    )
+    readonly_fields = ("logo_preview", "favicon_preview")
+
+    def logo_preview(self, obj):
+        if obj:
+            return format_html('<img src="{}" class="sp-admin-thumb" alt="">', obj.logo_url)
+        return "-"
+
+    def favicon_preview(self, obj):
+        if obj:
+            return format_html('<img src="{}" class="sp-admin-favicon" alt="">', obj.favicon_url)
+        return "-"
 
     def has_add_permission(self, request):
         return not SiteSettings.objects.exists()
+
+
+@admin.register(SiteText)
+class SiteTextAdmin(admin.ModelAdmin):
+    list_display = ("label", "key", "updated_at")
+    search_fields = ("label", "key", "text")
+    readonly_fields = ("key",)
+    fields = ("label", "key", "text")
+
+
+@admin.register(SiteImage)
+class SiteImageAdmin(admin.ModelAdmin):
+    list_display = ("label", "key", "preview", "updated_at")
+    search_fields = ("label", "key", "alt_text")
+    readonly_fields = ("key", "preview")
+    fields = ("label", "key", "preview", "image", "default_path", "alt_text")
+
+    def preview(self, obj):
+        if obj and obj.url:
+            return format_html('<img src="{}" class="sp-admin-thumb" alt="">', obj.url)
+        return "-"
+
+
+@admin.register(LegalPage)
+class LegalPageAdmin(admin.ModelAdmin):
+    list_display = ("title", "slug", "updated_at")
+    search_fields = ("title", "slug", "content")
+    readonly_fields = ("slug",)
+    fields = ("title", "slug", "content")
 
 
 @admin.register(ProjectTag)

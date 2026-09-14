@@ -1,10 +1,26 @@
+from django.core.validators import RegexValidator
 from django.db import models
 
 
+hex_color_validator = RegexValidator(
+    regex=r"^#[0-9A-Fa-f]{6}$",
+    message="Enter a color in HEX format, for example #5A3E2B.",
+)
+
+
 class SiteSettings(models.Model):
+    site_name = models.CharField(max_length=120, default="Spasibo LLC")
     phone = models.CharField(max_length=40, default="+1 845 678 899")
     email = models.EmailField(default="info@example.com")
     address = models.CharField(max_length=255, default="Dallas, TX")
+    primary_color = models.CharField(
+        max_length=7,
+        default="#5A3E2B",
+        validators=[hex_color_validator],
+        help_text="Main site color in HEX format.",
+    )
+    logo = models.FileField(upload_to="site/", blank=True)
+    favicon = models.FileField(upload_to="site/", blank=True)
 
     class Meta:
         verbose_name = "Site settings"
@@ -17,6 +33,63 @@ class SiteSettings(models.Model):
     def load(cls):
         settings, _ = cls.objects.get_or_create(pk=1)
         return settings
+
+    @property
+    def logo_url(self):
+        return self.logo.url if self.logo else "/static/plumber/assets/images/logo.png"
+
+    @property
+    def favicon_url(self):
+        return self.favicon.url if self.favicon else "/static/plumber/assets/images/favicon.png"
+
+
+class SiteText(models.Model):
+    key = models.SlugField(max_length=120, unique=True)
+    label = models.CharField(max_length=160)
+    text = models.TextField(blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ("label",)
+
+    def __str__(self):
+        return self.label
+
+
+class SiteImage(models.Model):
+    key = models.SlugField(max_length=120, unique=True)
+    label = models.CharField(max_length=160)
+    image = models.FileField(upload_to="site/", blank=True)
+    default_path = models.CharField(max_length=255, blank=True)
+    alt_text = models.CharField(max_length=160, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ("label",)
+
+    def __str__(self):
+        return self.label
+
+    @property
+    def url(self):
+        return self.image.url if self.image else self.default_path
+
+
+class LegalPage(models.Model):
+    PRIVACY = "privacy-policy"
+    COOKIE = "cookie-policy"
+    TERMS = "terms-of-service"
+
+    slug = models.SlugField(max_length=80, unique=True)
+    title = models.CharField(max_length=160)
+    content = models.TextField()
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ("title",)
+
+    def __str__(self):
+        return self.title
 
 
 class ProjectTag(models.Model):

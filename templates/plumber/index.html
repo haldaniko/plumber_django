@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Spasibo - Painting, Flooring and Custom Project Services</title>
+<title>{{ site_texts.meta_title.text }}</title>
 <!-- Stylesheets -->
 <link href="/static/plumber/assets/css/bootstrap.css" rel="stylesheet">
 <link href="/static/plumber/assets/css/style.css" rel="stylesheet">
@@ -12,8 +12,16 @@
 <link href="/static/plumber/assets/css/color.css" rel="stylesheet">
 <link href="/static/plumber/assets/css/placeholders.css" rel="stylesheet">
 
-<link rel="shortcut icon" href="/static/plumber/assets/images/favicon.png" type="image/x-icon">
-<link rel="icon" href="/static/plumber/assets/images/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="{{ site_settings.favicon_url }}" type="image/x-icon">
+<link rel="icon" href="{{ site_settings.favicon_url }}" type="image/x-icon">
+<style>
+    :root {
+        --primary-color: {{ site_settings.primary_color }};
+        --primary-color-soft: color-mix(in srgb, var(--primary-color) 10%, #ffffff);
+        --primary-color-muted: color-mix(in srgb, var(--primary-color) 24%, #ffffff);
+        --primary-color-dark: color-mix(in srgb, var(--primary-color) 78%, #000000);
+    }
+</style>
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,22 +49,22 @@
                 <div class="inner-container">
                     <!--Logo-->
                     <div class="logo-box">
-                        <div class="logo"><a href="#home"><img src="/static/plumber/assets/images/logo.png" alt=""></a></div>
-                        <div class="header-brand-text">Spasibo LLC</div>
+                        <div class="logo"><a href="#home"><img src="{{ site_settings.logo_url }}" alt="{{ site_settings.site_name }}"></a></div>
+                        <div class="header-brand-text">{{ site_settings.site_name }}</div>
                     </div>
                     <div class="right-column">
                         <div class="contact-info">
                             <div class="single-info">
                                 <div class="icon"><span class="flaticon-gps"></span></div>
                                 <div class="content">
-                                    <h5>Address</h5>
+                                    <h5>{{ site_texts.header_address_label.text }}</h5>
                                     <div class="text">{{ site_settings.address }}</div>
                                 </div>
                             </div>
                             <div class="single-info">
                                 <div class="icon"><span class="flaticon-comment"></span></div>
                                 <div class="content">
-                                    <h5>Call  us </h5>
+                                    <h5>{{ site_texts.header_phone_label.text }}</h5>
                                     <div class="text"><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></div>
                                 </div>
                             </div>
@@ -80,10 +88,10 @@
                         <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation">
-                                    <li><a href="#home">Home</a></li>
-                                    <li><a href="#services">Services</a></li>
-                                    <li><a href="#projects">Projects</a></li>
-                                    <li><a href="#contact">Contact</a></li>
+                                    <li><a href="#home">{{ site_texts.nav_home.text }}</a></li>
+                                    <li><a href="#services">{{ site_texts.nav_services.text }}</a></li>
+                                    <li><a href="#projects">{{ site_texts.nav_projects.text }}</a></li>
+                                    <li><a href="#contact">{{ site_texts.nav_contact.text }}</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -91,7 +99,7 @@
                         <div class="contact-info">
                             <div class="icon"><i class="flaticon-comment"></i></div>
                             <div>
-                                <h6>Send Us Email</h6>
+                                <h6>{{ site_texts.header_email_label.text }}</h6>
                                 <h4><a href="mailto:{{ site_settings.email }}">{{ site_settings.email }}</a></h4>
                             </div>                                
                         </div>
@@ -148,24 +156,24 @@
             <div class="swiper-wrapper">
                 <!-- Slide Item -->
                 <div class="swiper-slide">
-                    <img class="hero-background-image" src="/static/plumber/assets/images/main-slider/hero.jpg" alt="Exterior home improvement project">
+                    <img class="hero-background-image" src="{{ site_images.hero_background.url }}" alt="{{ site_images.hero_background.alt_text }}">
                     <div class="content-outer">
                         <div class="content-box">
                             <div class="inner">
                                 <div class="hero-intro">
-                                    <div class="sub-title">Trusted Home Improvement Team</div>
-                                    <h2>Refresh Your Space With Skilled Finish Work</h2>
-                                    <p>We handle painting, flooring, deck, trim, wall restoration, and custom repair projects with clean planning, professional tools, and careful execution.</p>
+                                    <div class="sub-title">{{ site_texts.hero_subtitle.text }}</div>
+                                    <h2>{{ site_texts.hero_intro_title.text }}</h2>
+                                    <p>{{ site_texts.hero_intro_text.text }}</p>
                                 </div>
-                                <h1>Painting, Flooring <br> & Custom Projects</h1>
-                                <div class="text">We help homeowners and businesses refresh spaces with clean painting,<br> reliable flooring, deck work, trim installation, and careful repairs.</div>
+                                <h1>{{ site_texts.hero_headline_line_1.text }} <br> {{ site_texts.hero_headline_line_2.text }}</h1>
+                                <div class="text">{{ site_texts.hero_summary_line_1.text }}<br> {{ site_texts.hero_summary_line_2.text }}</div>
                             </div>
                             <div class="hero-contact-strip">
                                 <div class="phone-block">
-                                    <span class="label">Call us</span>
+                                    <span class="label">{{ site_texts.hero_phone_label.text }}</span>
                                 <a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a>
                                 </div>
-                                <button type="button" class="theme-btn btn-style-one" data-toggle="modal" data-target="#requestModal"><span>Leave a Request</span></button>
+                                <button type="button" class="theme-btn btn-style-one" data-toggle="modal" data-target="#requestModal"><span>{{ site_texts.button_leave_request.text }}</span></button>
                             </div>
                         </div>
                     </div>
@@ -183,64 +191,64 @@
         <div class="auto-container">
             <div class="row align-items-center justify-content-between m-0">
                 <div class="sec-title">
-                    <div class="sub-title">Painting, Flooring & Finish Work</div>
-                    <h2>Quality & Reliability <br> <strong>With 100% Satisfaction</strong></h2>
+                    <div class="sub-title">{{ site_texts.services_subtitle.text }}</div>
+                    <h2>{{ site_texts.services_title_line_1.text }} <br> <strong>{{ site_texts.services_title_line_2.text }}</strong></h2>
                 </div>
-                <div class="text">From detailed painting to flooring, decks, and custom repair work, our team handles practical projects with clean planning, reliable tools, and careful finishing. </div>
+                <div class="text">{{ site_texts.services_intro.text }}</div>
             </div>
             <div class="row services-card-grid">
                     <div class="service-block-two col-lg-4 col-md-6">
                         <div class="inner-box">
                             <div class="image">
-                                <img src="/static/plumber/assets/images/resource/painting.jpg" alt="Painting project">
+                                <img src="{{ site_images.service_painting.url }}" alt="{{ site_images.service_painting.alt_text }}">
                             </div>
                             <div class="lower-content">
-                                <h4><span>Painting Projects</span></h4>
-                                <div class="text">Interior and exterior painting for homes, garages, fences, basements, concrete, and asphalt. We handle high-reach projects, wall damage restoration, color selection, and professional application with sprayers, rollers, brushes, extensions, ladders, and scaffolding.</div>
+                                <h4><span>{{ site_texts.service_painting_title.text }}</span></h4>
+                                <div class="text">{{ site_texts.service_painting_text.text }}</div>
                             </div>
                         </div>
                     </div>
                     <div class="service-block-two col-lg-4 col-md-6">
                         <div class="inner-box">
                             <div class="image">
-                                <img src="/static/plumber/assets/images/resource/flooring.jpg" alt="Flooring and deck project">
+                                <img src="{{ site_images.service_flooring.url }}" alt="{{ site_images.service_flooring.alt_text }}">
                             </div>
                             <div class="lower-content">
-                                <h4><span>Flooring and Deck</span></h4>
-                                <div class="text">Installation of laminate, hardwood, engineered wood, decks, trim, baseboards, and stairs. We can deliver materials to the site, remove old flooring, and haul away demolition waste so the project stays organized from start to finish.</div>
+                                <h4><span>{{ site_texts.service_flooring_title.text }}</span></h4>
+                                <div class="text">{{ site_texts.service_flooring_text.text }}</div>
                             </div>
                         </div>
                     </div>
                     <div class="service-block-two col-lg-4 col-md-6">
                         <div class="inner-box">
                             <div class="image">
-                                <img src="/static/plumber/assets/images/resource/custom.jpg" alt="Custom project">
+                                <img src="{{ site_images.service_custom.url }}" alt="{{ site_images.service_custom.alt_text }}">
                             </div>
                             <div class="lower-content">
-                                <h4><span>Custom Projects</span></h4>
-                                <div class="text">Our professional team is ready to review creative, unusual, or more complex projects. If your job needs flexible planning, careful problem solving, and hands-on experience, we can help define the scope and deliver the work.</div>
+                                <h4><span>{{ site_texts.service_custom_title.text }}</span></h4>
+                                <div class="text">{{ site_texts.service_custom_text.text }}</div>
                             </div>
                         </div>
                     </div>
             </div>
             <div class="services-request-btn text-center">
-                <button type="button" class="theme-btn btn-style-one" data-toggle="modal" data-target="#requestModal"><span>Leave a Request</span></button>
+                <button type="button" class="theme-btn btn-style-one" data-toggle="modal" data-target="#requestModal"><span>{{ site_texts.button_leave_request.text }}</span></button>
             </div>
         </div>
     </section>
 <section class="portfolio-section" id="projects">
         <div class="auto-container">
             <div class="sec-title text-center">
-                <div class="sub-title">Painting, Flooring &amp; Finish Work</div>
-                <h2><strong>Recent Home Improvement Projects</strong></h2>
-                <div class="text">Explore examples of practical painting, flooring, deck, and repair work completed with careful preparation, clean execution, and durable finishing.</div>
+                <div class="sub-title">{{ site_texts.projects_subtitle.text }}</div>
+                <h2><strong>{{ site_texts.projects_title.text }}</strong></h2>
+                <div class="text">{{ site_texts.projects_intro.text }}</div>
             </div>
             <!--Sortable Galery-->
             <div class="sortable-masonry">
                 <!--Filter-->
                 <div class="filters clearfix">
                     <ul class="filter-tabs filter-btns clearfix">
-                        <li class="filter active" data-role="button" data-filter=".all">All <span class="count">{{ projects|length }}</span></li>
+                        <li class="filter active" data-role="button" data-filter=".all">{{ site_texts.projects_filter_all.text }} <span class="count">{{ projects|length }}</span></li>
                         {% for tag in project_tags %}
                         <li class="filter" data-role="button" data-filter=".tag-{{ tag.slug }}">{{ tag.name }} <span class="count">{{ tag.active_count }}</span></li>
                         {% endfor %}
@@ -264,16 +272,16 @@
                     </div>
                     {% empty %}
                     <div class="col-12">
-                        <p class="projects-empty-message">No active projects yet. Add project cases in the admin panel.</p>
+                        <p class="projects-empty-message">{{ site_texts.projects_empty_message.text }}</p>
                     </div>
                     {% endfor %}
                 </div>
                 <div class="free-estimates-banner">
                     <div>
-                        <span>Free Estimates</span>
-                        <p>Tell us about your painting, flooring, deck, or repair project and we will help you plan the next step.</p>
+                        <span>{{ site_texts.free_estimates_title.text }}</span>
+                        <p>{{ site_texts.free_estimates_text.text }}</p>
                     </div>
-                    <button type="button" class="free-estimates-btn" data-toggle="modal" data-target="#requestModal">Leave a Request</button>
+                    <button type="button" class="free-estimates-btn" data-toggle="modal" data-target="#requestModal">{{ site_texts.button_leave_request.text }}</button>
                 </div>
             </div>
         </div>
@@ -283,9 +291,9 @@
     <section class="company-intro-section">
         <div class="auto-container">
             <div class="company-intro-content">
-                <h2>Spasibo LLC</h2>
-                <p>Our team has more than 15 years of experience in construction and finish work. We understand how building materials, surface preparation, flooring systems, coatings, trims, and protective finishes behave over time, and we use that knowledge to create projects that are done once and built to last.</p>
-                <p>We help clients choose practical materials, plan the right sequence of work, avoid rushed fixes, and finish each detail with clean execution. Whether it is painting, flooring, deck work, wall restoration, or a custom project, our goal is a durable result that looks good and serves your space for years.</p>
+                <h2>{{ site_texts.company_title.text }}</h2>
+                <p>{{ site_texts.company_paragraph_1.text }}</p>
+                <p>{{ site_texts.company_paragraph_2.text }}</p>
             </div>
         </div>
     </section>
@@ -295,13 +303,13 @@
         <div class="auto-container">
             <div class="request-options-panel">
                 <div class="sec-title text-center">
-                    <h2>Tell Us What Kind Of <br><span>Project You Need</span></h2>
+                    <h2>{{ site_texts.request_title_line_1.text }} <br><span>{{ site_texts.request_title_line_2.text }}</span></h2>
                 </div>
                 <div class="request-options-grid">
-                    <button type="button" class="theme-btn btn-style-one request-option-btn option-standard" data-toggle="modal" data-target="#requestModal" data-request-type="standard"><span>Standard Request</span></button>
-                    <button type="button" class="theme-btn btn-style-one request-option-btn option-urgent" data-toggle="modal" data-target="#requestModal" data-request-type="urgent"><span>Urgent Request</span></button>
-                    <button type="button" class="theme-btn btn-style-one request-option-btn option-commercial" data-toggle="modal" data-target="#requestModal" data-request-type="commercial"><span>B2B Clients</span></button>
-                    <button type="button" class="theme-btn btn-style-one request-option-btn option-complex" data-toggle="modal" data-target="#requestModal" data-request-type="complex"><span>Complex Request</span></button>
+                    <button type="button" class="theme-btn btn-style-one request-option-btn option-standard" data-toggle="modal" data-target="#requestModal" data-request-type="standard"><span>{{ site_texts.request_option_standard.text }}</span></button>
+                    <button type="button" class="theme-btn btn-style-one request-option-btn option-urgent" data-toggle="modal" data-target="#requestModal" data-request-type="urgent"><span>{{ site_texts.request_option_urgent.text }}</span></button>
+                    <button type="button" class="theme-btn btn-style-one request-option-btn option-commercial" data-toggle="modal" data-target="#requestModal" data-request-type="commercial"><span>{{ site_texts.request_option_commercial.text }}</span></button>
+                    <button type="button" class="theme-btn btn-style-one request-option-btn option-complex" data-toggle="modal" data-target="#requestModal" data-request-type="complex"><span>{{ site_texts.request_option_complex.text }}</span></button>
                 </div>
             </div>
         </div>
@@ -311,11 +319,11 @@
     <footer class="main-footer compact-footer">
         <div class="auto-container">
             <div class="compact-footer-legal">
-                <span>Copyright <span id="copyright-year"></span> Spasibo LLC. All rights reserved.</span>
+                <span>{{ site_texts.footer_copyright_prefix.text }} <span id="copyright-year"></span> {{ site_settings.site_name }}. {{ site_texts.footer_copyright_suffix.text }}</span>
                 <div class="footer-legal-links">
-                    <a href="#contact">Privacy Policy</a>
-                    <a href="#contact">Cookie Policy</a>
-                    <a href="#contact">Terms of Service</a>
+                    <a href="{% url 'legal_page' 'privacy-policy' %}">{{ site_texts.footer_privacy_label.text }}</a>
+                    <a href="{% url 'legal_page' 'cookie-policy' %}">{{ site_texts.footer_cookie_label.text }}</a>
+                    <a href="{% url 'legal_page' 'terms-of-service' %}">{{ site_texts.footer_terms_label.text }}</a>
                 </div>
             </div>
         </div>
@@ -331,22 +339,22 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             <div class="modal-header">
-                <h5 class="modal-title" id="requestModalLabel">Request a Quote</h5>
+                <h5 class="modal-title" id="requestModalLabel">{{ site_texts.request_modal_title.text }}</h5>
             </div>
             <div class="modal-body">
                 <form action="{% url 'submit_request' %}" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="request_type" value="general">
                     <div class="form-group">
-                        <input name="name" placeholder="Name" type="text" class="form-control" required>
+                        <input name="name" placeholder="{{ site_texts.form_name_placeholder.text }}" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <input name="phone" placeholder="Phone" type="text" class="form-control" required>
+                        <input name="phone" placeholder="{{ site_texts.form_phone_placeholder.text }}" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Tell us a little about the project" class="form-control" rows="4"></textarea>
+                        <textarea name="message" placeholder="{{ site_texts.form_message_placeholder.text }}" class="form-control" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="theme-btn btn-style-one w-100"><span>Submit Request</span></button>
+                    <button type="submit" class="theme-btn btn-style-one w-100"><span>{{ site_texts.form_submit_button.text }}</span></button>
                 </form>
             </div>
         </div>

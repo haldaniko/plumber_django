@@ -454,6 +454,13 @@ p {
     font-weight: 400;
 }
 
+.request-options-panel .sec-title .request-title {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: balance;
+}
+
 .request-options-panel .sec-title .text {
     max-width: 680px;
     margin: 0 auto;

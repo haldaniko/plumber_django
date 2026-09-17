@@ -13,6 +13,38 @@ from .models import (
 )
 
 
+EDITABLE_SITE_TEXT_KEYS = (
+    "meta_title",
+    "hero_subtitle",
+    "hero_intro_title",
+    "hero_intro_text",
+    "hero_headline_line_1",
+    "hero_headline_line_2",
+    "hero_summary_line_1",
+    "hero_summary_line_2",
+    "services_subtitle",
+    "services_title_line_1",
+    "services_title_line_2",
+    "services_intro",
+    "service_painting_title",
+    "service_painting_text",
+    "service_flooring_title",
+    "service_flooring_text",
+    "service_custom_title",
+    "service_custom_text",
+    "projects_subtitle",
+    "projects_title",
+    "projects_intro",
+    "free_estimates_title",
+    "free_estimates_text",
+    "company_title",
+    "company_paragraph_1",
+    "company_paragraph_2",
+    "request_title_line_1",
+    "request_title_line_2",
+)
+
+
 class ProjectCaseImageInline(admin.TabularInline):
     model = ProjectCaseImage
     extra = 1
@@ -51,8 +83,17 @@ class SiteSettingsAdmin(admin.ModelAdmin):
 class SiteTextAdmin(admin.ModelAdmin):
     list_display = ("label", "key", "updated_at")
     search_fields = ("label", "key", "text")
-    readonly_fields = ("key",)
+    readonly_fields = ("label", "key")
     fields = ("label", "key", "text")
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).filter(key__in=EDITABLE_SITE_TEXT_KEYS)
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 
 @admin.register(SiteImage)

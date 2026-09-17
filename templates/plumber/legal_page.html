@@ -36,7 +36,7 @@
                             <div class="single-info">
                                 <div class="icon"><span class="flaticon-comment"></span></div>
                                 <div class="content">
-                                    <h5>{{ site_texts.header_phone_label.text }}</h5>
+                                    <h5>Call us</h5>
                                     <div class="text"><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
 
     <main class="legal-page-section">
         <div class="auto-container">
-            <a class="legal-back-link" href="{% url 'home' %}">{{ site_texts.legal_back_home.text }}</a>
+            <a class="legal-back-link" href="{% url 'home' %}">Back to Home</a>
             <h1>{{ page.title }}</h1>
             <div class="legal-page-content">
                 {{ page.content|linebreaks }}

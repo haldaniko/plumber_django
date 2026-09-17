@@ -57,14 +57,14 @@
                             <div class="single-info">
                                 <div class="icon"><span class="flaticon-gps"></span></div>
                                 <div class="content">
-                                    <h5>{{ site_texts.header_address_label.text }}</h5>
+                                    <h5>Address</h5>
                                     <div class="text">{{ site_settings.address }}</div>
                                 </div>
                             </div>
                             <div class="single-info">
                                 <div class="icon"><span class="flaticon-comment"></span></div>
                                 <div class="content">
-                                    <h5>{{ site_texts.header_phone_label.text }}</h5>
+                                    <h5>Call us</h5>
                                     <div class="text"><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></div>
                                 </div>
                             </div>
@@ -88,10 +88,10 @@
                         <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation">
-                                    <li><a href="#home">{{ site_texts.nav_home.text }}</a></li>
-                                    <li><a href="#services">{{ site_texts.nav_services.text }}</a></li>
-                                    <li><a href="#projects">{{ site_texts.nav_projects.text }}</a></li>
-                                    <li><a href="#contact">{{ site_texts.nav_contact.text }}</a></li>
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#projects">Projects</a></li>
+                                    <li><a href="#contact">Contact</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -99,7 +99,7 @@
                         <div class="contact-info">
                             <div class="icon"><i class="flaticon-comment"></i></div>
                             <div>
-                                <h6>{{ site_texts.header_email_label.text }}</h6>
+                                <h6>Send Us Email</h6>
                                 <h4><a href="mailto:{{ site_settings.email }}">{{ site_settings.email }}</a></h4>
                             </div>                                
                         </div>
@@ -170,10 +170,10 @@
                             </div>
                             <div class="hero-contact-strip">
                                 <div class="phone-block">
-                                    <span class="label">{{ site_texts.hero_phone_label.text }}</span>
+                                    <span class="label">Call us</span>
                                 <a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a>
                                 </div>
-                                <button type="button" class="theme-btn btn-style-one" data-toggle="modal" data-target="#requestModal"><span>{{ site_texts.button_leave_request.text }}</span></button>
+                                <button type="button" class="theme-btn btn-style-one" data-toggle="modal" data-target="#requestModal"><span>Leave a Request</span></button>
                             </div>
                         </div>
                     </div>
@@ -232,7 +232,7 @@
                     </div>
             </div>
             <div class="services-request-btn text-center">
-                <button type="button" class="theme-btn btn-style-one" data-toggle="modal" data-target="#requestModal"><span>{{ site_texts.button_leave_request.text }}</span></button>
+                <button type="button" class="theme-btn btn-style-one" data-toggle="modal" data-target="#requestModal"><span>Leave a Request</span></button>
             </div>
         </div>
     </section>
@@ -248,7 +248,7 @@
                 <!--Filter-->
                 <div class="filters clearfix">
                     <ul class="filter-tabs filter-btns clearfix">
-                        <li class="filter active" data-role="button" data-filter=".all">{{ site_texts.projects_filter_all.text }} <span class="count">{{ projects|length }}</span></li>
+                        <li class="filter active" data-role="button" data-filter=".all">All <span class="count">{{ projects|length }}</span></li>
                         {% for tag in project_tags %}
                         <li class="filter" data-role="button" data-filter=".tag-{{ tag.slug }}">{{ tag.name }} <span class="count">{{ tag.active_count }}</span></li>
                         {% endfor %}
@@ -272,7 +272,7 @@
                     </div>
                     {% empty %}
                     <div class="col-12">
-                        <p class="projects-empty-message">{{ site_texts.projects_empty_message.text }}</p>
+                        <p class="projects-empty-message">No active projects yet. Add project cases in the admin panel.</p>
                     </div>
                     {% endfor %}
                 </div>
@@ -281,7 +281,7 @@
                         <span>{{ site_texts.free_estimates_title.text }}</span>
                         <p>{{ site_texts.free_estimates_text.text }}</p>
                     </div>
-                    <button type="button" class="free-estimates-btn" data-toggle="modal" data-target="#requestModal">{{ site_texts.button_leave_request.text }}</button>
+                    <button type="button" class="free-estimates-btn" data-toggle="modal" data-target="#requestModal">Leave a Request</button>
                 </div>
             </div>
         </div>
@@ -306,10 +306,10 @@
                     <h2>{{ site_texts.request_title_line_1.text }} <br><span>{{ site_texts.request_title_line_2.text }}</span></h2>
                 </div>
                 <div class="request-options-grid">
-                    <button type="button" class="theme-btn btn-style-one request-option-btn option-standard" data-toggle="modal" data-target="#requestModal" data-request-type="standard"><span>{{ site_texts.request_option_standard.text }}</span></button>
-                    <button type="button" class="theme-btn btn-style-one request-option-btn option-urgent" data-toggle="modal" data-target="#requestModal" data-request-type="urgent"><span>{{ site_texts.request_option_urgent.text }}</span></button>
-                    <button type="button" class="theme-btn btn-style-one request-option-btn option-commercial" data-toggle="modal" data-target="#requestModal" data-request-type="commercial"><span>{{ site_texts.request_option_commercial.text }}</span></button>
-                    <button type="button" class="theme-btn btn-style-one request-option-btn option-complex" data-toggle="modal" data-target="#requestModal" data-request-type="complex"><span>{{ site_texts.request_option_complex.text }}</span></button>
+                    <button type="button" class="theme-btn btn-style-one request-option-btn option-standard" data-toggle="modal" data-target="#requestModal" data-request-type="standard"><span>Standard Request</span></button>
+                    <button type="button" class="theme-btn btn-style-one request-option-btn option-urgent" data-toggle="modal" data-target="#requestModal" data-request-type="urgent"><span>Urgent Request</span></button>
+                    <button type="button" class="theme-btn btn-style-one request-option-btn option-commercial" data-toggle="modal" data-target="#requestModal" data-request-type="commercial"><span>B2B Clients</span></button>
+                    <button type="button" class="theme-btn btn-style-one request-option-btn option-complex" data-toggle="modal" data-target="#requestModal" data-request-type="complex"><span>Complex Request</span></button>
                 </div>
             </div>
         </div>
@@ -319,11 +319,11 @@
     <footer class="main-footer compact-footer">
         <div class="auto-container">
             <div class="compact-footer-legal">
-                <span>{{ site_texts.footer_copyright_prefix.text }} <span id="copyright-year"></span> {{ site_settings.site_name }}. {{ site_texts.footer_copyright_suffix.text }}</span>
+                <span>Copyright <span id="copyright-year"></span> {{ site_settings.site_name }}. All rights reserved.</span>
                 <div class="footer-legal-links">
-                    <a href="{% url 'legal_page' 'privacy-policy' %}">{{ site_texts.footer_privacy_label.text }}</a>
-                    <a href="{% url 'legal_page' 'cookie-policy' %}">{{ site_texts.footer_cookie_label.text }}</a>
-                    <a href="{% url 'legal_page' 'terms-of-service' %}">{{ site_texts.footer_terms_label.text }}</a>
+                    <a href="{% url 'legal_page' 'privacy-policy' %}">Privacy Policy</a>
+                    <a href="{% url 'legal_page' 'cookie-policy' %}">Cookie Policy</a>
+                    <a href="{% url 'legal_page' 'terms-of-service' %}">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -339,22 +339,22 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             <div class="modal-header">
-                <h5 class="modal-title" id="requestModalLabel">{{ site_texts.request_modal_title.text }}</h5>
+                <h5 class="modal-title" id="requestModalLabel">Request a Quote</h5>
             </div>
             <div class="modal-body">
                 <form action="{% url 'submit_request' %}" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="request_type" value="general">
                     <div class="form-group">
-                        <input name="name" placeholder="{{ site_texts.form_name_placeholder.text }}" type="text" class="form-control" required>
+                        <input name="name" placeholder="Name" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <input name="phone" placeholder="{{ site_texts.form_phone_placeholder.text }}" type="text" class="form-control" required>
+                        <input name="phone" placeholder="Phone" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="{{ site_texts.form_message_placeholder.text }}" class="form-control" rows="4"></textarea>
+                        <textarea name="message" placeholder="Tell us a little about the project" class="form-control" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="theme-btn btn-style-one w-100"><span>{{ site_texts.form_submit_button.text }}</span></button>
+                    <button type="submit" class="theme-btn btn-style-one w-100"><span>Submit Request</span></button>
                 </form>
             </div>
         </div>

@@ -26,6 +26,7 @@
     --sp-thumb-bg: #d9d9d9;
     --sp-actions-bg: rgba(255, 255, 255, .96);
     --sp-shadow: rgba(17, 24, 39, .08);
+    --sp-primary-hover: #3A281C;
 }
 
 body {
@@ -262,6 +263,150 @@ select,
     background: var(--sp-surface);
 }
 
+body.login {
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    min-height: 100%;
+    height: auto;
+    padding: 32px 16px;
+    background: var(--body-bg);
+}
+
+.login #container {
+    width: min(420px, 100%);
+    min-width: 0;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--sp-border);
+    border-top: 4px solid var(--primary);
+    border-radius: 6px;
+    background: var(--sp-surface);
+    box-shadow: 0 24px 60px var(--sp-shadow);
+}
+
+.login #header {
+    display: block;
+    min-height: 0;
+    padding: 28px 32px 24px;
+    border: 0;
+    border-bottom: 1px solid var(--sp-border-soft);
+    background: var(--sp-surface);
+    box-shadow: none;
+    text-align: center;
+}
+
+.login #branding,
+.login #site-name {
+    min-width: 0;
+    margin: 0;
+}
+
+.login #site-name,
+.login #site-name a:link,
+.login #site-name a:visited {
+    color: var(--sp-brand-fg);
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.login .main,
+.login #content,
+.login #content-main {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+}
+
+.login #content {
+    padding: 28px 32px 32px;
+    background: var(--sp-surface);
+}
+
+.login .form-row {
+    padding: 0 0 20px;
+}
+
+.login .form-row label {
+    display: block;
+    margin: 0 0 8px;
+    color: var(--sp-strong-fg);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.login .form-row #id_username,
+.login .form-row #id_password {
+    box-sizing: border-box;
+    width: 100%;
+    height: 46px;
+    padding: 10px 12px;
+    border: 1px solid var(--sp-input-border);
+    border-radius: 4px;
+    background: var(--sp-surface-muted);
+    color: var(--sp-strong-fg);
+    font-size: 15px;
+    line-height: 1.4;
+    transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.login .form-row #id_username:focus,
+.login .form-row #id_password:focus {
+    border-color: var(--primary);
+    background: var(--sp-surface);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent);
+    outline: 0;
+}
+
+.login .submit-row {
+    display: block;
+    margin: 4px 0 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    text-align: left;
+}
+
+.login .submit-row input,
+.login .submit-row input.default {
+    width: 100%;
+    height: 46px;
+    margin: 0;
+    padding: 0 18px;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    background: var(--primary);
+    color: var(--primary-fg);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.login .submit-row input:hover,
+.login .submit-row input.default:hover {
+    border-color: var(--sp-primary-hover);
+    background: var(--sp-primary-hover);
+}
+
+.login .submit-row input:focus-visible {
+    outline: 2px solid var(--link-fg);
+    outline-offset: 2px;
+}
+
+.login .errornote {
+    margin: 0 0 20px;
+    border-radius: 4px;
+}
+
+.login .password-reset-link {
+    margin-top: 18px;
+    text-align: center;
+}
+
 .site-text-editor #content {
     max-width: 1180px;
 }
@@ -464,6 +609,26 @@ select,
     }
 }
 
+@media (max-width: 480px) {
+    body.login {
+        padding: 16px;
+    }
+
+    .login #header {
+        padding: 24px 22px 20px;
+    }
+
+    .login #site-name,
+    .login #site-name a:link,
+    .login #site-name a:visited {
+        font-size: 24px;
+    }
+
+    .login #content {
+        padding: 24px 22px 26px;
+    }
+}
+
 html[data-theme="dark"] {
     --primary: #765239;
     --secondary: #28313d;
@@ -515,6 +680,7 @@ html[data-theme="dark"] {
     --sp-thumb-bg: #222831;
     --sp-actions-bg: rgba(23, 26, 32, .96);
     --sp-shadow: rgba(0, 0, 0, .28);
+    --sp-primary-hover: #946a4b;
     color-scheme: dark;
 }
 
@@ -577,6 +743,7 @@ html[data-theme="dark"] .site-text-section:nth-of-type(6) { --section-accent: #8
         --sp-thumb-bg: #222831;
         --sp-actions-bg: rgba(23, 26, 32, .96);
         --sp-shadow: rgba(0, 0, 0, .28);
+        --sp-primary-hover: #946a4b;
         color-scheme: dark;
     }
 

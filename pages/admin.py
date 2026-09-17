@@ -22,12 +22,12 @@ SITE_TEXT_SECTIONS = (
     {
         "number": "SEO",
         "title": "Browser and search engines",
-        "description": "Page information that is not displayed inside the site content.",
+        "description": "Page information shown outside the visible page content.",
         "groups": (
             {
                 "title": "Page settings",
                 "fields": (
-                    ("meta_title", "Browser tab title", "Also used as the page title by search engines."),
+                    ("meta_title", "Browser tab title", "Title shown in the browser tab and search results."),
                 ),
             },
         ),
@@ -45,55 +45,41 @@ SITE_TEXT_SECTIONS = (
                     ("hero_intro_text", "Introductory paragraph", "Paragraph below the introductory heading."),
                 ),
             },
-            {
-                "title": "Main heading",
-                "fields": (
-                    ("hero_headline_line_1", "First line", "Top line of the large heading."),
-                    ("hero_headline_line_2", "Second line", "Bottom line of the large heading."),
-                ),
-            },
-            {
-                "title": "Summary",
-                "fields": (
-                    ("hero_summary_line_1", "First line", "Top line below the main heading."),
-                    ("hero_summary_line_2", "Second line", "Bottom line below the main heading."),
-                ),
-            },
         ),
     },
     {
         "number": "02",
         "title": "Services section",
-        "description": "Section heading, introduction, and the three service cards.",
+        "description": "Heading and three cards in the second content section.",
         "groups": (
             {
                 "title": "Section heading",
                 "fields": (
-                    ("services_subtitle", "Small heading", "Short line above the main section heading."),
+                    ("services_subtitle", "Small heading", "Short line above this section's main heading."),
                     ("services_title_line_1", "Heading, first line", "Top line of the section heading."),
-                    ("services_title_line_2", "Heading, second line", "Emphasized bottom line of the section heading."),
+                    ("services_title_line_2", "Heading, second line", "Bottom line of the section heading."),
                     ("services_intro", "Introductory paragraph", "Text shown beside the section heading."),
                 ),
             },
             {
-                "title": "Painting card",
+                "title": "Service card 1",
                 "fields": (
-                    ("service_painting_title", "Card title", "Name of the painting service."),
-                    ("service_painting_text", "Card description", "Description below the painting title."),
+                    ("service_painting_title", "Card title", "Heading shown on the first card."),
+                    ("service_painting_text", "Card description", "Text shown below the first card heading."),
                 ),
             },
             {
-                "title": "Flooring card",
+                "title": "Service card 2",
                 "fields": (
-                    ("service_flooring_title", "Card title", "Name of the flooring service."),
-                    ("service_flooring_text", "Card description", "Description below the flooring title."),
+                    ("service_flooring_title", "Card title", "Heading shown on the second card."),
+                    ("service_flooring_text", "Card description", "Text shown below the second card heading."),
                 ),
             },
             {
-                "title": "Custom projects card",
+                "title": "Service card 3",
                 "fields": (
-                    ("service_custom_title", "Card title", "Name of the custom projects service."),
-                    ("service_custom_text", "Card description", "Description below the custom projects title."),
+                    ("service_custom_title", "Card title", "Heading shown on the third card."),
+                    ("service_custom_text", "Card description", "Text shown below the third card heading."),
                 ),
             },
         ),
@@ -101,21 +87,21 @@ SITE_TEXT_SECTIONS = (
     {
         "number": "03",
         "title": "Projects section",
-        "description": "Heading above the project gallery and the estimate banner below it.",
+        "description": "Heading above the gallery and banner below the gallery.",
         "groups": (
             {
                 "title": "Section heading",
                 "fields": (
-                    ("projects_subtitle", "Small heading", "Short line above the projects heading."),
-                    ("projects_title", "Main heading", "Large heading above the project gallery."),
-                    ("projects_intro", "Introductory paragraph", "Text below the projects heading."),
+                    ("projects_subtitle", "Small heading", "Short line above this section's main heading."),
+                    ("projects_title", "Main heading", "Large heading above the gallery."),
+                    ("projects_intro", "Introductory paragraph", "Text below the main heading."),
                 ),
             },
             {
-                "title": "Free estimates banner",
+                "title": "Banner below gallery",
                 "fields": (
-                    ("free_estimates_title", "Banner heading", "Highlighted text above the banner paragraph."),
-                    ("free_estimates_text", "Banner paragraph", "Supporting text next to the request button."),
+                    ("free_estimates_title", "Banner heading", "Heading shown inside the banner."),
+                    ("free_estimates_text", "Banner paragraph", "Text shown below the banner heading."),
                 ),
             },
         ),
@@ -123,14 +109,14 @@ SITE_TEXT_SECTIONS = (
     {
         "number": "04",
         "title": "Company section",
-        "description": "Company introduction displayed below the project gallery.",
+        "description": "Text section displayed below the gallery.",
         "groups": (
             {
-                "title": "About the company",
+                "title": "Section content",
                 "fields": (
-                    ("company_title", "Section heading", "Main heading for the company introduction."),
-                    ("company_paragraph_1", "First paragraph", "First company information paragraph."),
-                    ("company_paragraph_2", "Second paragraph", "Second company information paragraph."),
+                    ("company_title", "Section heading", "Heading shown at the top of this section."),
+                    ("company_paragraph_1", "First paragraph", "First paragraph below the section heading."),
+                    ("company_paragraph_2", "Second paragraph", "Second paragraph below the section heading."),
                 ),
             },
         ),

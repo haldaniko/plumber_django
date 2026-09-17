@@ -40,6 +40,9 @@ class SiteTextAdminTests(TestCase):
         )
         positions = [content.index(heading) for heading in headings]
         self.assertEqual(positions, sorted(positions))
+        self.assertEqual(content.count("<textarea"), len(EDITABLE_SITE_TEXT_KEYS))
+        self.assertContains(response, "Service card 1")
+        self.assertNotContains(response, "Name of the painting service.")
 
     def test_editor_saves_all_text_fields_together(self):
         data = {

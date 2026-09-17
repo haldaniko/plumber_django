@@ -134,11 +134,6 @@ p {
     margin: 0;
 }
 
-.banner-section .static-banner .content-box h1,
-.banner-section .static-banner .content-box .text {
-    display: none;
-}
-
 .banner-section .swiper-slide:after {
     position: absolute;
     inset: 0;

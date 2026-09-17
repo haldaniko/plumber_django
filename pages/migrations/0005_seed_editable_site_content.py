@@ -19,18 +19,6 @@ SITE_TEXTS = [
         "Hero intro text",
         "We handle painting, flooring, deck, trim, wall restoration, and custom repair projects with clean planning, professional tools, and careful execution.",
     ),
-    ("hero_headline_line_1", "Hero headline line 1", "Painting, Flooring"),
-    ("hero_headline_line_2", "Hero headline line 2", "& Custom Projects"),
-    (
-        "hero_summary_line_1",
-        "Hero summary line 1",
-        "We help homeowners and businesses refresh spaces with clean painting,",
-    ),
-    (
-        "hero_summary_line_2",
-        "Hero summary line 2",
-        "reliable flooring, deck work, trim installation, and careful repairs.",
-    ),
     ("hero_phone_label", "Hero phone label", "Call us"),
     ("button_leave_request", "Button: leave request", "Leave a Request"),
     ("services_subtitle", "Services subtitle", "Painting, Flooring & Finish Work"),

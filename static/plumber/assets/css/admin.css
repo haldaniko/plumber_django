@@ -49,7 +49,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 8px 12px;
+    gap: 10px;
     margin-left: auto;
     color: #4b5563;
     font-size: 13px;
@@ -74,25 +74,29 @@ body {
 #user-tools form {
     display: inline-flex;
     align-items: center;
+    height: 40px;
     margin: 0;
 }
 
-#user-tools button,
-.theme-toggle {
+#user-tools .sp-admin-link,
+#user-tools .theme-toggle {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    min-height: 30px;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 40px;
+    min-height: 40px;
     margin: 0;
-    padding: 5px 10px;
+    padding: 0 16px;
     border: 1px solid #d9e0ee;
     border-radius: 999px;
     background: #f7f9fd;
     color: #5A3E2B;
-    font-size: 12px;
-    line-height: 1.2;
+    font-size: 13px;
+    line-height: 1;
     cursor: pointer;
     text-transform: none;
+    vertical-align: middle;
 }
 
 .sp-admin-userbar {
@@ -100,27 +104,28 @@ body {
 }
 
 .sp-admin-welcome {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
     color: #4b5563;
     white-space: nowrap;
 }
 
 .sp-admin-link {
-    display: inline-flex;
-    align-items: center;
-    min-height: 34px;
-    padding: 7px 14px;
-    border: 1px solid #d9e0ee;
-    border-radius: 999px;
-    background: #f7f9fd;
     color: #5A3E2B !important;
-    font-size: 13px;
-    line-height: 1.2;
 }
 
-.sp-admin-link:hover {
+.sp-admin-link:hover,
+#user-tools .theme-toggle:hover {
     background: #F3EEE8;
     border-color: #C9BBAA;
     color: #3A281C !important;
+}
+
+#user-tools .sp-admin-link:focus-visible,
+#user-tools .theme-toggle:focus-visible {
+    outline: 2px solid #5A3E2B;
+    outline-offset: 2px;
 }
 
 #user-tools .sp-admin-logout {
@@ -129,9 +134,24 @@ body {
     background: #f7f9fd;
 }
 
-.theme-toggle svg {
-    width: 16px;
-    height: 16px;
+#logout-form .sp-admin-logout:hover {
+    margin-bottom: 0;
+}
+
+#user-tools .theme-toggle {
+    flex: 0 0 40px;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+#user-tools .theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    color: inherit;
+    fill: none;
+    stroke: currentColor;
+    overflow: visible;
 }
 
 #user-tools .visually-hidden,
